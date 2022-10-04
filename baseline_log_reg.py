@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     # label: 0 is not sarcastic, 1 is sarcastic
     #TODO: TRAIN, TEST, VALIDATION SPLIT
-    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.5, random_state=42)
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
     X_train = X_train.values
     X_test = X_test.values
@@ -33,6 +33,7 @@ if __name__ == "__main__":
     Y_test = Y_test.values
 
     #### Feature Extraction #####
+    #https://kavita-ganesan.com/news-classifier-with-logistic-regression-in-python/#.YzwpTnZBxhE
     vec = CountVectorizer(binary=True, ngram_range=(2,2))
     vec = vec.fit(X_train)
     X_train = vec.transform(X_train)
